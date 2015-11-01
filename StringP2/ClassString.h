@@ -13,14 +13,14 @@ class String{
 	//operators: == i !=
 	// c_str()  -> metode que retorni la cadena que li pasis
 	String();
-	String(const String& other);
-	String(const char*  otherString);
-	String(unsigned int otherCapacity);
+	String(const String& str);
+	String(const char*  str);
+	String(unsigned int capacity);
 
 	~String();
 
-	bool operator ==(const char* other)const;
-	bool operator !=(const char* other)const;
+	bool operator ==(const char* str)const;
+	bool operator !=(const char* str)const;
 	const char* c_str()const;
 
 

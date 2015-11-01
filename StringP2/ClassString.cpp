@@ -13,36 +13,41 @@ String::String(){
 
 }
 
-String::String(const String& other){
+String::String(const String& str){
 
-	str = other.str;
-	capacity = other.capacity;
+	capacity = strlen(str.str) + 1;
+	 
+	this->str = new char[capacity];
+	strcpy_s(this->str, capacity ,str.str);
+
 
 }
 
 
-String::String(const char* otherString){
+String::String(const char* str){
 
-	capacity = strlen(otherString) + 1;
-	*str = *otherString;
+	capacity = strlen(str) + 1;
+	
+	this->str = new char[capacity];
+	strcpy_s(this->str, capacity, str);
 
 }
 
-String::String(unsigned int otherCapacity){
+String::String(unsigned int capacity){
 
-	capacity = otherCapacity;
+	this->capacity = capacity;
 };
 
-bool String:: operator==(const char* other)const{
+bool String:: operator==(const char* str)const{
 
-	return !strcmp(other, str);
+	return !strcmp(str, this->str);
 };
 
 
 
-bool String:: operator!=(const char* other)const{
+bool String:: operator!=(const char* str)const{
 
-	return strcmp(other, str);
+	return strcmp(str,this-> str);
 };
 
 const char* String::c_str()const{
