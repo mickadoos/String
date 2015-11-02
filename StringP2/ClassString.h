@@ -1,7 +1,7 @@
 #ifndef __STRING__
 #define __STRING__
 
-class String{
+class StringP2{
 
 
 	char* str;   // es fan les propietats privades per eveitar: delete string, string = new...(allocata un munt de memoria, error de LINK), 
@@ -12,18 +12,18 @@ class String{
 	//hem de fer destructor
 	//operators: == i !=
 	// c_str()  -> metode que retorni la cadena que li pasis
-	String();
-	String(const String& str);
-	String(const char*  str);
-	String(unsigned int capacity);
+	StringP2();
+	StringP2(const StringP2& str);
+	StringP2(const char*  str);
+	StringP2(unsigned int capacity);
 
-	~String();
+	~StringP2();
 
 	bool operator ==(const char* str)const;
 	bool operator !=(const char* str)const;
 	const char* c_str()const;
-
-
+	const StringP2& operator =(const StringP2& str);
+	const StringP2& operator =(const char* str);
 
 };
 
